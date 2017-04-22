@@ -1,1 +1,39 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-koa-session",     "homepage": "https://github.com/npmtest/node-npmtest-koa-session",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-koa-session.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  koa-session (v5.0.0)  [![npm package](https://img.shields.io/npm/v/npmtest-koa-session.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-koa-session) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-koa-session.svg)](https://travis-ci.org/npmtest/node-npmtest-koa-session)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-koa-session",
+    "keywords": [
+        "coverage",
+        "test",
+        "koa-session"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_koa_session.js",
+    "name": "npmtest-koa-session",
+    "nameAlias": "npmtest_koa_session",
+    "nameOriginal": "npmtest-koa-session",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-koa-session.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "2017.4.23"
+}
